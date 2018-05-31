@@ -1,7 +1,7 @@
 class Match < ApplicationRecord
 
-  has_many :users, through: :challenger
-  has_many :users, through: :challengee
+  belongs_to :challenger
+  belongs_to :challengee
 
   def user_stats
   total_games_as_challenger = Match.where(users.user_id = matches.challenger).count
