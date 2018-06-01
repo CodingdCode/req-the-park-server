@@ -1,4 +1,10 @@
 class CreateUser < ActiveRecord::Migration[5.2]
+
+  has_secure_password
+
+  def to_token_payload
+  end
+  
   def change
     create_table :users do |t|
         t.string :username

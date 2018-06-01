@@ -1,7 +1,12 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user
 
   def index
-    render json:  User.all.to_json
+    if current_user
+      render json:  User.all.to_json
+    else
+      p wrong
+    end
   end
 
   def show
@@ -17,7 +22,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
   end
-  
+
   private
 
   def req_params

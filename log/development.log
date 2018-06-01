@@ -16209,3 +16209,55 @@ Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.6ms)
   [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
   ↳ db/seeds.rb:12
   [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (38.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 250], ["LIMIT", 1]]
+  [1m[35m (6.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(35170025716164255)[0m
+  ↳ bin/rails:4
+  [1m[35m (11.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (1.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(35170025716164255)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Started GET "/users" for 127.0.0.1 at 2018-06-01 14:30:02 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{}}
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-06-01 14:30:23 -0400
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{}}
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-01 14:32:27 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"cherry", "hash_pw"=>"cherry", "img_url"=>"cherry", "user"=>{"username"=>"cherry", "hash_pw"=>"cherry", "img_url"=>"cherry"}}
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-01 15:27:07 -0400
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"cherry", "hash_pw"=>"cherry", "img_url"=>"cherry", "user"=>{"username"=>"cherry", "hash_pw"=>"cherry", "img_url"=>"cherry"}}
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-01 15:27:49 -0400
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{}}
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
