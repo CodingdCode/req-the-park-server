@@ -1,12 +1,8 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user
+  before_action :authenticate_user, only: [:index, :show, :destroy]
 
   def index
-    if current_user
       render json:  User.all.to_json
-    else
-      p wrong
-    end
   end
 
   def show
