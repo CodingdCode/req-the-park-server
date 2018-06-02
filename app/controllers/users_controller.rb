@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user, only: [:index, :show, :destroy]
+  before_action :authenticate_user, only: [:index, :destroy]
 
   def index
       render json:  User.all.to_json
