@@ -11,17 +11,19 @@ class UsersController < ApplicationController
 
   def create
     render json: User.create(req_params).to_json
+  end
 
+  def update
+   render json: @user.update(user_params)
   end
 
   def destroy
-    @user = User.find(params[:id])
     @user.destroy
   end
 
   private
 
   def req_params
-    params.require(:user).permit(:username, :hash_pw, :img_url)
+    params.require(:user).permit(:username, :email, :password_digest)
   end
 end

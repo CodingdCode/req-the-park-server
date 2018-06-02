@@ -11,6 +11,7 @@ require 'faker';
   250.times do |i|
     User.create [
       username: Faker::Internet.unique.user_name,
-      hash_pw: Faker::Internet.unique.free_email
+      email: Faker::Internet.unique.free_email,
+      password_digest: Faker::Internet.unique.password
     ]
   end
